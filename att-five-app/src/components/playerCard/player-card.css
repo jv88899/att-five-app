@@ -1,0 +1,31 @@
+.player__card {
+    background: grey;
+    margin: 25px auto;
+    width: 90%;
+}
+
+.player__img {
+    border-radius: 100%;
+    margin: 0 auto;
+    width: 75%;
+}
+
+.player__img img {
+    border-radius: 100%;
+    margin-top: 10px;
+}
+
+.player__card__name {
+    font-size: 26px;
+    padding: 0 5px;
+    text-align: center;
+    width: 100%;
+}
+
+.player__card__info,
+.player__card__stats__category {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    width: 100%;
+}

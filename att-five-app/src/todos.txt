@@ -3,6 +3,7 @@
 3: set up folders [done]
 4: get App.js working [done]
 5: add 5 fake players to the "database" [done]
-6: get all players to appear
-7: create a "player" component
-8: get all players to appear as individual "player" component
+6: get all players to appear [done]
+7: create a "player" component [done]
+8: get all players to appear as individual "player" component [done]
+9: add basic styling to the PlayerCard component [done]

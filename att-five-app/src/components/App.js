@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PlayerCard from './playerCard/PlayerCard';
+import './app.css';
 
 class App extends Component {
     state = {
@@ -16,7 +17,7 @@ class App extends Component {
                 assistsPerGame: 12.0,
                 stealsPerGame: 2.5,
                 blocksPerGame: 2.7,
-                currentImage: 'https://placehold.it/100x100'
+                currentImage: 'https://placehold.it/1000x1000'
             },
             {
                 firstName: 'Stephen',
@@ -30,7 +31,7 @@ class App extends Component {
                 assistsPerGame: 14.0,
                 stealsPerGame: 3.5,
                 blocksPerGame: 0.7,
-                currentImage: 'https://placehold.it/100x100'
+                currentImage: 'https://placehold.it/1000x1000'
             },
             {
                 firstName: 'Kevin',
@@ -44,7 +45,7 @@ class App extends Component {
                 assistsPerGame: 8.0,
                 stealsPerGame: 2.1,
                 blocksPerGame: 2.6,
-                currentImage: 'https://placehold.it/100x100'
+                currentImage: 'https://placehold.it/1000x1000'
             },
             {
                 firstName: 'Anthony',
@@ -58,7 +59,7 @@ class App extends Component {
                 assistsPerGame: 7.0,
                 stealsPerGame: 0.5,
                 blocksPerGame: 4.7,
-                currentImage: 'https://placehold.it/100x100'
+                currentImage: 'https://placehold.it/1000x1000'
             },
             {
                 firstName: 'Joel',
@@ -72,7 +73,7 @@ class App extends Component {
                 assistsPerGame: 5.6,
                 stealsPerGame: 1.8,
                 blocksPerGame: 3.8,
-                currentImage: 'https://placehold.it/100x100'
+                currentImage: 'https://placehold.it/1000x1000'
             },
         ]
     }
