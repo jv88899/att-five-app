@@ -7,3 +7,5 @@
 7: create a "player" component [done]
 8: get all players to appear as individual "player" component [done]
 9: add basic styling to the PlayerCard component [done]
+10: add select sort by option
+11: add ability to sort by PPG

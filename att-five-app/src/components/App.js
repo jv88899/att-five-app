@@ -1,6 +1,27 @@
 import React, { Component } from 'react';
 import PlayerCard from './playerCard/PlayerCard';
+import SortBy from './sortBy/SortBy';
 import './app.css';
+
+// function compare(a,b) {
+//     if (a.last_nom < b.last_nom)
+//       return -1;
+//     if (a.last_nom > b.last_nom)
+//       return 1;
+//     return 0;
+//   }
+  
+//   objs.sort(compare);
+
+const comparePPG = (a, b) => {
+    if (a.pointsPerGame > b.pointsPerGame) {
+        return -1;
+    }
+    if (a.pointsPerGame < b.pointsPerGame) {
+        return 1;
+    }
+    return 0;
+}
 
 class App extends Component {
     state = {
@@ -78,9 +99,20 @@ class App extends Component {
         ]
     }
 
+    componentDidMount = () => {
+        this.setState( prevState => ({
+            database: prevState.database.sort(comparePPG)
+        }))
+    }
+
+    handleChange = () => {
+
+    }
+
     render() {
         return(
             <div className="app">
+                <SortBy />
                 <div className="player__list">
                     {
                         this.state.database.map( player => (
