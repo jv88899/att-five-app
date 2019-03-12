@@ -3,21 +3,51 @@ import PlayerCard from './playerCard/PlayerCard';
 import SortBy from './sortBy/SortBy';
 import './app.css';
 
-// function compare(a,b) {
-//     if (a.last_nom < b.last_nom)
-//       return -1;
-//     if (a.last_nom > b.last_nom)
-//       return 1;
-//     return 0;
-//   }
-  
-//   objs.sort(compare);
-
 const comparePPG = (a, b) => {
     if (a.pointsPerGame > b.pointsPerGame) {
         return -1;
     }
     if (a.pointsPerGame < b.pointsPerGame) {
+        return 1;
+    }
+    return 0;
+}
+
+const compareRPG = (a, b) => {
+    if (a.reboundsPerGame > b.reboundsPerGame) {
+        return -1;
+    }
+    if (a.reboundsPerGame < b.reboundsPerGame) {
+        return 1;
+    }
+    return 0;
+}
+
+const compareAPG = (a, b) => {
+    if (a.assistsPerGame > b.assistsPerGame) {
+        return -1;
+    }
+    if (a.assistsPerGame < b.assistsPerGame) {
+        return 1;
+    }
+    return 0;
+}
+
+const compareBPG = (a, b) => {
+    if (a.blocksPerGame > b.blocksPerGame) {
+        return -1;
+    }
+    if (a.blocksPerGame < b.blocksPerGame) {
+        return 1;
+    }
+    return 0;
+}
+
+const compareSPG = (a, b) => {
+    if (a.stealsPerGame > b.stealsPerGame) {
+        return -1;
+    }
+    if (a.stealsPerGame < b.stealsPerGame) {
         return 1;
     }
     return 0;
@@ -105,18 +135,50 @@ class App extends Component {
         }))
     }
 
-    handleChange = () => {
-
+    handleChange = e => {
+        let filter = e.target.value;
+        switch (filter) {
+            case 'points':
+                this.setState( prevState => ({
+                    database: prevState.database.sort(comparePPG)
+                }))
+                break;
+            case 'rebounds':
+                this.setState( prevState => ({
+                    database: prevState.database.sort(compareRPG)
+                }))
+                break;
+            case 'assists':
+                this.setState( prevState => ({
+                    database: prevState.database.sort(compareAPG)
+                }))
+                break;
+            case 'blocks':
+                this.setState( prevState => ({
+                    database: prevState.database.sort(compareBPG)
+                }))
+                break;
+            case 'steals':
+                this.setState( prevState => ({
+                    database: prevState.database.sort(compareSPG)
+                }))
+                break;
+            default:
+                break;
+        }
     }
 
     render() {
         return(
             <div className="app">
-                <SortBy />
+                <SortBy
+                    handleChange={this.handleChange}
+                />
                 <div className="player__list">
                     {
                         this.state.database.map( player => (
                             <PlayerCard
+                                key={player.lastName}
                                 currentImage={player.currentImage}
                                 fullName={player.fullName}
                                 primaryPosition={player.primaryPosition}

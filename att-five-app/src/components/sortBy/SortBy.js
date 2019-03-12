@@ -1,9 +1,10 @@
 import React from 'react';
 import './sort-by.css';
 
-const SortBy = () => (
+const SortBy = props => (
     <select
         name="sort"
+        onChange={props.handleChange}
     >
         <option value="points">Points Per Game</option>
         <option value="rebounds">Rebounds</option>
